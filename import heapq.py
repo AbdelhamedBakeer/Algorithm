@@ -1,7 +1,7 @@
 import heapq
 from dataclasses import dataclass, field
 
-# ========== Patient Class ==========
+
 @dataclass(order=True)
 class Patient:
     priority: tuple = field(init=False, repr=False)
@@ -11,11 +11,11 @@ class Patient:
     name: str = field(compare=False)
 
     def __post_init__(self):
-        # ترتيب الأولوية داخل الـ Priority Queue
+        
         self.priority = (-self.severity, self.arrival_time, self.service_time)
 
 
-# ========== Hospital Priority System ==========
+
 class EmergencyPrioritySystem:
     def __init__(self):
         self.queue = []
@@ -55,7 +55,7 @@ class EmergencyPrioritySystem:
             ))
 
 
-# ========== Example Run ==========
+
 if __name__ == "__main__":
     system = EmergencyPrioritySystem()
 
